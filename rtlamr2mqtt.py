@@ -27,7 +27,7 @@ def publish_message(**kwargs):
     qos = int(kwargs.get('qos', 0))
     retain = kwargs.get('retain', False)
     client_id = 'rtlamr2mqtt'
-    hostname = kwargs.get('hostname', 'localhost')
+    hostname = kwargs.get('hostname', 'host.docker.internal')
     port = int(kwargs.get('port', 1883))
     will = { 'topic': availability_topic, 'payload':'offline', 'qos': 1, 'retain': True }
     if verbosity == 'debug':
